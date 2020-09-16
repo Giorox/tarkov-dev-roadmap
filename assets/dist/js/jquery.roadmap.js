@@ -47,6 +47,25 @@
 			var html = '<li class="' + settings.rootClass + '__events__event">' + settings.eventTemplate + '</li>';
 			html = html.replace('####DATE###', event.date);
 			html = html.replace('####CONTENT###', event.content);
+			
+			// Parse and find where the anchor tag is set
+			var parsedHTML = $($.parseHTML(html));
+			var anchorTag = parsedHTML.find('a');
+			
+			// Create the new url for it's href and replace it
+			var newURL = "javascript:createModal(" + event.id + ")"
+			anchorTag.attr("href", newURL);
+			
+			// If the event is marked as a Wipe, it will change the color to red
+			if(event.content == "WIPE")
+			{
+				parsedHTML.find('.event__date').addClass("wipe-color");
+				parsedHTML.find('.event__content').removeClass("off-white");
+				parsedHTML.find('.event__content').addClass("wipe-color");
+			}
+			
+			// Substitute newly edited HTML with old HTML
+			html = parsedHTML;
 
 			var left = 100 / (settings.eventsPerSlide - 1) * key;
 

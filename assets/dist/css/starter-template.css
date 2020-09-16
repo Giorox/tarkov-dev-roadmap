@@ -59,6 +59,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	border: 1px solid #9A8866;
 }
 
+.wipe-color {
+	color: red;
+}
+
 .vertical-separator {
 	border-left: 1px solid #9A8866;
 	height: 100%;
