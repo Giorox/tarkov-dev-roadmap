@@ -13,6 +13,10 @@
 		<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Custom styles for this template -->
 		<link href="assets/dist/css/starter-template.css" rel="stylesheet">
+		<!-- Roadmap.JS CSS -->
+		<link href="assets/dist/css/jquery.roadmap.min.css" rel="stylesheet">
+		<!-- Micromodal JS CSS -->
+		<link href="assets/dist/css/micromodal.css" rel="stylesheet">
 		
 		<!-- Scripts -->
 		<!-- jQuery -->
@@ -21,6 +25,13 @@
 
 		<!-- Bootstrap.js -->
 		<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Roadmap.JS -->
+		<script src="assets/dist/js/jquery.roadmap.js"></script>
+		<script src="assets/dist/js/jquery.roadmap.min.js"></script>
+		
+		<!-- Micromodal JS -->
+		<script src="assets/dist/js/micromodal.min.js"></script>
 		
 		<!-- Custom Scripts -->
 		<script src="assets/dist/js/customFuncs.js"></script>
@@ -37,7 +48,7 @@
 						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
+						<a class="nav-link" href="javascript:void(0);" onclick="MicroModal.show('modal-extra-info');">Link</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -55,12 +66,11 @@
 		</nav>
 
 		<main role="main" class="container">
-
 			<div class="starter-template">
-				<h1>Bootstrap starter template</h1>
-				<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+				<h1>Escape From Tarkov Unofficial Developer Roadmap</h1>
+				<p class="lead off-white">Below we have aggregated information on future Tarkov updates.<br> All information is crowd-sourced and self-sourced from openly available information.</p>
 			</div>
-
+			<div id="tarkov-roadmap-timeline"></div>
 		</main><!-- /.main -->
 	</body>
 	<footer class="footer">
@@ -68,7 +78,34 @@
 		<div class="container">
 			<span>&copy; 2020 - <span id="current-date"></span> -- <b>Tarkov Dev Roadmap</b></span>
 			<br>
-			<span>ver 0.1.0</span>
+			<span>ver 0.2.0</span>
 		</div>
 	</footer>
+	
+	<!-- Start modal template -->
+	<div class="modal micromodal-slide" id="modal-extra-info" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-extra-info-title" >
+				<header class="modal__header">
+					<h2 class="modal__title" id="modal-extra-info-title">
+						Update .12.8
+					</h2>
+
+					<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+				</header>
+
+				<main class="modal__content" id="modal-extra-info-content">
+					<p>
+						Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet 
+					</p>
+				</main>
+				<footer class="modal__footer">
+					<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+				</footer>
+
+			</div>
+		</div>
+	</div>
+	<!-- End modal template -->
+
 </html>
