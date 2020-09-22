@@ -44,7 +44,14 @@
 		var settings = $.extend({}, defaults, opts);
 
 		var buildEvent = function (event, key) {
-			var html = '<li class="' + settings.rootClass + '__events__event">' + settings.eventTemplate + '</li>';
+			if(event.wipe == 1)
+			{
+				var html = '<li class="' + settings.rootClass + '__events__event wipe">' + settings.eventTemplate + '</li>';
+			}
+			else
+			{
+				var html = '<li class="' + settings.rootClass + '__events__event">' + settings.eventTemplate + '</li>';
+			}
 			html = html.replace('####DATE###', event.date);
 			html = html.replace('####CONTENT###', event.content);
 			
@@ -57,7 +64,7 @@
 			anchorTag.attr("href", newURL);
 			
 			// If the event is marked as a Wipe, it will change the color to red
-			if(event.content == "WIPE")
+			if(event.wipe == 1)
 			{
 				parsedHTML.find('.event__date').addClass("wipe-color");
 				parsedHTML.find('.event__content').removeClass("off-white");

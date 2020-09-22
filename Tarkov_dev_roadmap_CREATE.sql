@@ -16,6 +16,7 @@ CREATE TABLE updates (
     updateName text NOT NULL,
     estimatedDate text NOT NULL,
     extraInformation longtext NOT NULL,
+	isWipe boolean NOT NULL,
     CONSTRAINT updates_pk PRIMARY KEY (id_update)
 );
 

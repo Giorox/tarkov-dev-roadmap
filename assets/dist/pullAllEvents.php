@@ -10,7 +10,7 @@ $jsonArray = array();
 $conn = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
 
 // Build the SQL statement to be executed
-$sql = "SELECT id_update, updateName, estimatedDate, extraInformation FROM updates";
+$sql = "SELECT id_update, updateName, estimatedDate, extraInformation, isWipe FROM updates";
 
 // Prepare and Execute
 $stmt = $conn->prepare($sql);
@@ -32,7 +32,8 @@ foreach ($list as $event)
 	$eventNode = array(
 		"id" => $event["id_update"],
 		"date" => $event["estimatedDate"],
-		"content" => $event["updateName"]
+		"content" => $event["updateName"],
+		"wipe" => $event["isWipe"]
 	);
 	
 	array_push($treatedEventArray, $eventNode);

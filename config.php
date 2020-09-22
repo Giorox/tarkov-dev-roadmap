@@ -6,8 +6,9 @@ define( "DB_USERNAME", "root" );
 define( "DB_PASSWORD", "" );
 define( "CLASS_PATH", "classes" );
 define( "TEMPLATE_PATH", "templates" );
-//require( CLASS_PATH . "/User.php" );
-//require( "dist/standAloneFuncs.php" );
+define( "IMAGE_PATH", "images" );
+require( CLASS_PATH . "/User.php" );
+require( CLASS_PATH . "/Update.php" );
 setlocale(LC_ALL, 'portuguese-brazilian', 'ptb', 'pt_BR');
 
 function handleException( Throwable $t ) {
