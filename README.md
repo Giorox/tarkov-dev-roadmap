@@ -1,11 +1,11 @@
-<p align="center"><a href="https://tarkov-roadmap.dev" target="_blank"><img src="assets/img/doc-image.png" width="400"></a></p>
+<p align="center"><a href="https://tarkov-roadmap.dev" target="_blank"><img src="assets/img/doc-image.png" width="600"></a></p>
 
 <p align="center">
 <img alt="CircleCI" src="https://img.shields.io/circleci/build/github/Giorox/tarkov-dev-roadmap/master">
 <img alt="GitHub tag (latest SemVer)" src="https://img.shields.io/github/v/tag/Giorox/tarkov-dev-roadmap?label=live%20version&sort=semver">
 <img alt="GitHub" src="https://img.shields.io/github/license/Giorox/tarkov-dev-roadmap">
 <img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Ftarkov-roadmap.dev">
-<a href="https://www.buymeacoffee.com/Giorox"><img alt="Support" src="https://img.shields.io/website?url=https%3A%2F%2Ftarkov-roadmap-dev"></a>
+<a href="https://www.buymeacoffee.com/Giorox"><img alt="Support" src="https://img.shields.io/badge/support-Buy%20the%20developer%20a%20coffee!-blueviolet?logo=buy-me-a-coffee"></a>
 </p>
 
 # The un-official 'Escape From Tarkov' development roadmap
