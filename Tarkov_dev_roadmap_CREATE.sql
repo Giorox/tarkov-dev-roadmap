@@ -20,5 +20,18 @@ CREATE TABLE updates (
     CONSTRAINT updates_pk PRIMARY KEY (id_update)
 );
 
+-- Table: updateImages
+CREATE TABLE updateImages (
+    id_image int unsigned NOT NULL AUTO_INCREMENT,
+	id_ownerUpdate int unsigned NOT NULL,
+    filename text NOT NULL,
+    CONSTRAINT updateImages_pk PRIMARY KEY (id_image)
+);
+
+-- foreign keys
+-- Reference: updateImages_updates (table: updateImages)
+ALTER TABLE updateImages ADD CONSTRAINT updateImages_updates FOREIGN KEY updateImages_updates (id_ownerUpdate)
+    REFERENCES updates (id_update) ON DELETE RESTRICT ON UPDATE CASCADE;
+
 -- End of file.
 

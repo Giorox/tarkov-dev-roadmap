@@ -1,0 +1,40 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # Specify the version you desire here
+      - image: circleci/php:7.1-node-browsers
+
+    steps:
+      - checkout
+
+      - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
+      - run: sudo docker-php-ext-install zip
+
+      # prepare the database
+      - run: touch Tarkov_dev_roadmap_CREATE.sql
+
+  deployment:
+    machine:
+      image: ubuntu-1604:201903-01
+    steps:
+      - checkout
+      - run: sed -i -e 's/no-api-key/$TINYMCE_APIKEY/g' include/header.php
+      - run: sed -i -e 's/MYSQL-HOSTNAME/$MYSQL_HOSTNAME/g' config.php
+      - run: sed -i -e 's/MYSQL-DBNAME/$MYSQL_DBNAME/g' config.php
+      - run: sed -i -e 's/MYSQL-USERNAME/$MYSQL_USERNAME/g' config.php
+      - run: sed -i -e 's/MYSQL-PASSWORD/$MYSQL_PASSWORD/g' config.php
+      - run: scp -P 65002 -r * $DESTINATION_STRING
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deployment:
+          requires:
+            - build

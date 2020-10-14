@@ -1,0 +1,21 @@
+<Files .htaccess>
+	order allow,deny
+	deny from all
+</Files>
+
+<Files config.php>
+	order allow,deny
+	deny from all
+</Files>
+
+<Files Tarkov_dev_roadmap_CREATE.sql>
+	order allow,deny
+	deny from all
+</Files>
+
+<Files postAcceptor.php>
+	order deny,allow
+	deny from all
+	Require local
+	allow from all
+</Files>
