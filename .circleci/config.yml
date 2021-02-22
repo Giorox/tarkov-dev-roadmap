@@ -22,12 +22,22 @@ jobs:
     machine:
       image: ubuntu-1604:201903-01
     steps:
+      # Checkout code from repository
       - checkout
+      
+      # Replace constants such as TinyMCE API and DB Connection details
       - run: sed -i -e 's/no-api-key/$TINYMCE_APIKEY/g' include/header.php
       - run: sed -i -e 's/MYSQL-HOSTNAME/$MYSQL_HOSTNAME/g' config.php
       - run: sed -i -e 's/MYSQL-DBNAME/$MYSQL_DBNAME/g' config.php
       - run: sed -i -e 's/MYSQL-USERNAME/$MYSQL_USERNAME/g' config.php
       - run: sed -i -e 's/MYSQL-PASSWORD/$MYSQL_PASSWORD/g' config.php
+      
+      # Delete some files that should not be uploaded
+      - run: rm LICENSE
+      - run: rm README.md
+      - run: rm Tarkov_dev_roadmap_CREATE.sql
+      
+      # Copy the repository to the detination folder
       - run: scp -P 65002 -r * $DESTINATION_STRING
 
 workflows:

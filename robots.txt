@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: admin.php
+Disallow: config.php
+Disallow: postAcceptor.php
+Disallow: LICENSE
+Disallow: README.md
+Disallow: Tarkov_dev_roadmap_CREATE.sql
+Disallow: /admin/
+Disallow: /classes/
+
+# Sitemap: http://www.example.com/sitemap.xml fill this and uncomment once we have built one

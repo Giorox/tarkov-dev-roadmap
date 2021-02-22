@@ -2,11 +2,11 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 	<a class="navbar-brand" href="index.php"><b>Tarkov Development Roadmap</b></a>
 	
-	<a class="trkv_btn right-float" href="admin.php?action=logout"><b>Logout</b></a>
+	<a class="trkv_btn right-float" onclick="confirmLogout()"><b>Logout</b></a>
 </nav>
 
 <?php if ( isset( $results['errorMessage'] ) ) { ?>		
-	<div class="alert alert-danger" role="alert">
+	<div class="mx-2 alert alert-danger" role="alert">
 		<?php echo $results['errorMessage'] ?>
 			
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -17,7 +17,7 @@
 
 
 <?php if ( isset( $results['statusMessage'] ) ) { ?>		
-	<div class="alert alert-warning" role="alert">
+	<div class="mx-2 alert alert-warning" role="alert">
 		<?php echo $results['statusMessage'] ?>
 			
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -41,7 +41,7 @@
 		</div>
 	</div>
 	
-	<div class="card col-2 mx-2">
+	<div class="card col-3 mx-2">
 		<h3 class="card-header">Dashboard</h3>
 		<div class="card-body">
 			<p>You are logged in as <b><?php echo $_SESSION["username"] ?></b>.</p>
@@ -51,5 +51,11 @@
 	</div>
 </div>
 
+<?php include "modals/confirmLogout_Modal.php" ?>
+<?php include "modals/updatePassword_Modal.php" ?>
+
+<?php if ( isset( $_SESSION['needNewPass'] ) ) { ?>
+	<script> callPasswordUpdateModal(<?php echo $_SESSION['id_cad']; ?>); </script>
+<?php } ?>
 
 <?php include "include/footer.php" ?>

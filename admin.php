@@ -49,7 +49,9 @@ function login() {
     }
 
   } else {
-
+	if ( isset( $_GET['status'] ) ) {
+		if ( $_GET['status'] == "logoutSuccess") $results['statusMessage'] = "Logged out succesfully.";
+	}
     // User has not posted the login form yet: display the form
     require( "admin/loginForm.php" );
   }
@@ -74,6 +76,7 @@ function newUpdate() {
     $update = new Update;
     $update->storeFormValues( $_POST );
     $update->insert();
+	if ( isset( $_FILES['updateImages'] ) ) $update->storeUploadedImage( $_FILES['updateImages'] );
     header( "Location: admin.php?status=changesSaved" );
 
   } elseif ( isset( $_POST['cancel'] ) ) {
@@ -105,7 +108,9 @@ function editUpdate() {
     }
 
     $update->storeFormValues( $_POST );
+	if ( isset($_POST['deleteImage']) && $_POST['deleteImage'] == "yes" ) $update->deleteImages();
     $update->update();
+	if ( isset( $_FILES['updateImages'] ) ) $update->storeUploadedImage( $_FILES['updateImages'] );
     header( "Location: admin.php?status=changesSaved" );
 
   } elseif ( isset( $_POST['cancel'] ) ) {
@@ -128,6 +133,7 @@ function deleteUpdate() {
     return;
   }
 
+  $update->deleteImages();
   $update->delete();
   
   header( "Location: admin.php?status=updateDeleted" );

@@ -5,7 +5,7 @@
 <img alt="GitHub tag (latest SemVer)" src="https://img.shields.io/github/v/tag/Giorox/tarkov-dev-roadmap?label=live%20version&sort=semver">
 <img alt="GitHub" src="https://img.shields.io/github/license/Giorox/tarkov-dev-roadmap">
 <img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2Ftarkov-roadmap.dev">
-<a href="https://www.buymeacoffee.com/Giorox"><img alt="Support" src="https://img.shields.io/badge/support-Buy%20the%20developer%20a%20coffee!-blueviolet?logo=buy-me-a-coffee"></a>
+<a target="_blank" href="https://www.buymeacoffee.com/Giorox"><img alt="Support" src="https://img.shields.io/badge/support-Buy%20the%20developer%20a%20coffee!-blueviolet?logo=buy-me-a-coffee"></a>
 </p>
 
 # The un-official 'Escape From Tarkov' development roadmap
@@ -29,6 +29,7 @@ A live version of the website can be found at:
 # Known-issues
 Reference our issues in GitHub, if it has never been reported and is still occuring, please provide us with information to replicate it and aswell as your system details (Computer or Mobile).
 
+- Mobile viewing is ugly and inconsistent (borderline unusable);
 ---
 
 # Suggesting new information or edits to existing information

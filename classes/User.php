@@ -179,6 +179,8 @@ class User
 				$_SESSION['username'] = $row["nome"];
 				$_SESSION['email'] = $row["email"];
 				$_SESSION["loggedin"] = true;
+				
+				$_SESSION["needNewPass"] = true;
 
 				return true;
 			}

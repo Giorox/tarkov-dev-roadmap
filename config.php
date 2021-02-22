@@ -12,7 +12,7 @@ require( CLASS_PATH . "/Update.php" );
 setlocale(LC_ALL, 'portuguese-brazilian', 'ptb', 'pt_BR');
 
 function handleException( Throwable $t ) {
-echo "Oops! Tivemos um problema. Tente Novamente mais tarde." . $t;
+echo "Oops! There was a problem. Try again later." . $t;
 error_log( $t->getMessage() );
 }
 

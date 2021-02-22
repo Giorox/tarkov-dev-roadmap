@@ -28,6 +28,12 @@ $row = $stmt->fetch();
 // Kill the connection
 $conn = null;
 
+// Pull the Update Object itself
+$updateObj = Update::getById( (int)$row["id_update"] );
+
+// Pull ALL image paths
+$arrayOfImagePaths = $updateObj->getAllImages();
+
 // Return the results
 if ( $row )
 {
@@ -35,6 +41,7 @@ if ( $row )
 	$jsonArray["updateName"] = $row["updateName"];
 	$jsonArray["estimatedDate"] = $row["estimatedDate"];
 	$jsonArray["extraInformation"] = $row["extraInformation"];
+	$jsonArray["images"] = $arrayOfImagePaths;
 }
 else
 {
@@ -42,6 +49,7 @@ else
 	$jsonArray["updateName"] = "";
 	$jsonArray["estimatedDate"] = "";
 	$jsonArray["extraInformation"] = "";
+	$jsonArray["images"] = "";
 }
 
 
